@@ -4,13 +4,13 @@
 }
 
 .containerLight{
-    height:400px;
+    height:800px;
     background-color: whitesmoke;
     color: grey;
 }  
 
 .containerDark{
-    height: 400px;
+    height: 800px;
     background-color: darkslategrey;
     color: grey;
 }
@@ -26,6 +26,7 @@
 }
 
 .clock{
+    margin: 0 auto;
     text-align: center;
     padding: 5% 0 3% 0;
 }

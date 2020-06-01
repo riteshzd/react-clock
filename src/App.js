@@ -1,6 +1,7 @@
 import React, {UseState} from 'react'
 import styles from './App.module.css'
 import DigitalClock from './Components/Clock/DigitalClock'
+import Analog from './Components/Clock/Analog'
 import Switch from 'react-switch'
 
 class App extends React.Component{
@@ -35,7 +36,7 @@ class App extends React.Component{
                 <div className={styles.body}>
 
                     <div className={styles.clock}>
-                        <DigitalClock/>
+                        {this.state.analogClock? <Analog/> : <DigitalClock/>}         
                     </div>
 
                     <div className={styles.selectionPanel}>
