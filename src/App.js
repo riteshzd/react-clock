@@ -2,7 +2,7 @@ import React, {UseState} from 'react'
 import styles from './App.module.css'
 import DigitalClock from './Components/Clock/DigitalClock'
 import Analog from './Components/Clock/Analog'
-import Switch from 'react-switch'
+import Switch from 'react-switch' 
 
 class App extends React.Component{
     constructor(){
@@ -26,6 +26,7 @@ class App extends React.Component{
     }
 
     render(){
+        var moment = require('moment-timezone')
         return(
             <div className={this.state.darkTheme? styles.containerDark : styles.containerLight}>
                 <div className={styles.title}>
