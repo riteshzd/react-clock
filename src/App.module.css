@@ -31,6 +31,10 @@
     padding: 5% 0 3% 0;
 }
 
+.timezoneSelect{
+    padding: 3% 40% 3% 40%;
+}
+
 .selectionPanel{
     padding: 3% 40% 5% 40%;
     display: flex;
@@ -40,7 +44,7 @@
 .modeSelection{
     display: flex;
     flex-direction: column;
-    padding: 20% 10% 20% 10%;
+    padding: 10% 10% 20% 10%;
 }
 
 

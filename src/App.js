@@ -1,7 +1,8 @@
-import React, {UseState} from 'react'
+import React from 'react'
 import styles from './App.module.css'
 import DigitalClock from './Components/Clock/DigitalClock'
 import Analog from './Components/Clock/Analog'
+import TimeZoneSelect from './Components/TimeZoneSelect/TimeZoneSelect'
 import Switch from 'react-switch' 
 
 class App extends React.Component{
@@ -9,10 +10,12 @@ class App extends React.Component{
         super();
         this.state={
             darkTheme:false,
-            analogClock:false
+            analogClock:false,
+            selectedTZ:" "
         }
         this.themeHandler = this.themeHandler.bind(this)
         this.clockHandler =this.clockHandler.bind(this)
+        this.handleTZSelect = this.handleTZSelect.bind(this)
     }
 
     themeHandler(e){
@@ -25,8 +28,26 @@ class App extends React.Component{
         console.log("Clock has been changed..!!")
     }
 
-    render(){
+    async handleTZSelect(timezone){
+        await this.setState({selectedTZ:timezone})
+        console.log(this.state.selectedTZ)
+    }
+
+    componentDidMount(){
         var moment = require('moment-timezone')
+        console.log(moment.tz.names());
+        var offset = ((moment.tz('US/Michigan').utcOffset())/60.0) 
+        console.log(offset)
+        var d = new Date()
+        console.log(d.getTimezoneOffset())
+        var utc = d.getTime()+((d.getTimezoneOffset())*60000)
+        var utcTm = new Date(utc)
+        console.log(utcTm.toLocaleString())
+        var nd = new Date(utc+(3600000*offset))
+        console.log(nd.toLocaleString())
+    }
+
+    render(){
         return(
             <div className={this.state.darkTheme? styles.containerDark : styles.containerLight}>
                 <div className={styles.title}>
@@ -38,6 +59,10 @@ class App extends React.Component{
 
                     <div className={styles.clock}>
                         {this.state.analogClock? <Analog/> : <DigitalClock/>}         
+                    </div>
+
+                    <div className={styles.timezoneSelect}>
+                    <TimeZoneSelect handleTZSelect={this.handleTZSelect}/>
                     </div>
 
                     <div className={styles.selectionPanel}>
