@@ -29,6 +29,7 @@ class TimeZoneSelect extends React.Component{
                 <Select
                     options={timeZoneList}
                     onChange={this.selectionHandler}
+                    placeholder="Select a region"
                 />
             </div>
         )

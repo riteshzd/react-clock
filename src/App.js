@@ -11,7 +11,8 @@ class App extends React.Component{
         this.state={
             darkTheme:false,
             analogClock:false,
-            selectedTZ:" "
+            selectedTZ:"Asia/Kolkata",
+            currentTime:" "
         }
         this.themeHandler = this.themeHandler.bind(this)
         this.clockHandler =this.clockHandler.bind(this)
@@ -30,21 +31,13 @@ class App extends React.Component{
 
     async handleTZSelect(timezone){
         await this.setState({selectedTZ:timezone})
-        console.log(this.state.selectedTZ)
-    }
-
-    componentDidMount(){
         var moment = require('moment-timezone')
-        console.log(moment.tz.names());
-        var offset = ((moment.tz('US/Michigan').utcOffset())/60.0) 
-        console.log(offset)
+        var offset = ((moment.tz(this.state.selectedTZ).utcOffset())/60.0) 
         var d = new Date()
-        console.log(d.getTimezoneOffset())
         var utc = d.getTime()+((d.getTimezoneOffset())*60000)
-        var utcTm = new Date(utc)
-        console.log(utcTm.toLocaleString())
         var nd = new Date(utc+(3600000*offset))
-        console.log(nd.toLocaleString())
+        await this.setState({currentTime:nd.toLocaleTimeString()})
+        console.log(this.state.selectedTZ, this.state.currentTime)    
     }
 
     render(){
@@ -58,7 +51,7 @@ class App extends React.Component{
                 <div className={styles.body}>
 
                     <div className={styles.clock}>
-                        {this.state.analogClock? <Analog/> : <DigitalClock/>}         
+                        {this.state.analogClock? <Analog/> : <DigitalClock Timezone={this.state.selectedTZ}/>}         
                     </div>
 
                     <div className={styles.timezoneSelect}>

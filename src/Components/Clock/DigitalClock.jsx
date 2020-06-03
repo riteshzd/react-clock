@@ -2,19 +2,27 @@ import React, { useState } from 'react'
 import styles from './DigitalClock.module.css'
 
 
-const DigitalClock = ()=>{
-
-    let time = new Date().toLocaleTimeString();
-
+const DigitalClock = (props)=>{
+    var moment = require('moment-timezone')
+    var offset = ((moment.tz(props.Timezone).utcOffset())/60.0) 
+    var d = new Date()
+    var utc = d.getTime()+((d.getTimezoneOffset())*60000)
+    var nd = new Date(utc+(3600000*offset))
+    var time = nd.toLocaleTimeString()
     const [currentTime, setCurrentTime] = useState(time)
     const updateTime=()=>{
-        time = new Date().toLocaleTimeString();
+        var moment = require('moment-timezone')
+        var offset = ((moment.tz(props.Timezone).utcOffset())/60.0) 
+        var d = new Date()
+        var utc = d.getTime()+((d.getTimezoneOffset())*60000)
+        var nd = new Date(utc+(3600000*offset))
+        var time = nd.toLocaleTimeString()
         setCurrentTime(time)
     }
     setInterval(updateTime,1000)
     return(
         <div className={styles.DigitalClock}>
-            <h3>{currentTime}</h3>
+            <h3>{time}</h3>
         </div>
     )
 }
