@@ -82,6 +82,9 @@ class App extends React.Component{
 
                     </div>
                 </div>
+                <div className={styles.credits}>
+                    <h5><a href="https://github.com/riteshzd/react-clock">designed by riteshzd</a></h5>
+                </div>
             </div>
         )
     }
