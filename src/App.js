@@ -51,11 +51,12 @@ class App extends React.Component{
                 <div className={styles.body}>
 
                     <div className={styles.clock}>
-                        {this.state.analogClock? <Analog/> : <DigitalClock Timezone={this.state.selectedTZ}/>}         
+                        {this.state.analogClock? <Analog Timezone={this.state.selectedTZ}/> : <DigitalClock Timezone={this.state.selectedTZ}/>}         
                     </div>
 
                     <div className={styles.timezoneSelect}>
                     <TimeZoneSelect handleTZSelect={this.handleTZSelect}/>
+                    <h4>Give Continent followed by name of City</h4>
                     </div>
 
                     <div className={styles.selectionPanel}>
@@ -80,7 +81,6 @@ class App extends React.Component{
                         </div>
 
                     </div>
-                    
                 </div>
             </div>
         )

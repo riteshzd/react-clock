@@ -4,13 +4,13 @@
 }
 
 .containerLight{
-    height:800px;
+    height:820px;
     background-color: whitesmoke;
     color: grey;
 }  
 
 .containerDark{
-    height: 800px;
+    height: 820px;
     background-color: #1b262c;
     color:#0f4c75;
 }
@@ -33,6 +33,7 @@
 
 .timezoneSelect{
     padding: 3% 40% 3% 40%;
+    text-align: center;
 }
 
 .selectionPanel{
@@ -46,5 +47,3 @@
     flex-direction: column;
     padding: 10% 10% 20% 10%;
 }
-
-
