@@ -55,7 +55,7 @@
 
 .credits{
     text-align: right;
-    padding: 6% 2% 2% 2%;
+    padding: 6% 4% 6% 2%;
     flex-shrink: 0;
 }
 
@@ -78,16 +78,20 @@ a:link,:visited{
 
     .clock{
         font-size: 1.1em;
-        padding: 3% 0 5% 0;
+        padding: 6% 0 5% 0;
     }
 
     .timezoneSelect{
-        padding: 3% 30% 3% 30%;
+        padding: 6% 30% 3% 30%;
     }
 
     .selectionPanel{
-        padding: 3% 30% 3% 35%;
+        padding: 6% 30% 3% 35%;
         font-size: 1.1em;
+    }
+
+    .credits{
+        padding: 6% 2% 2% 2%;
     }
 }
 
