@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f71b5b629ccf7fa2d7566a65f89fd75",
+    "revision": "bfafa5d3e32211ee610833cc657068ee",
     "url": "/react-clock/index.html"
   },
   {
-    "revision": "0f6eac8ee5ae25c7c316",
-    "url": "/react-clock/static/css/main.4b4286e9.chunk.css"
+    "revision": "c6087f98d76625d18f9b",
+    "url": "/react-clock/static/css/main.4f25717e.chunk.css"
   },
   {
     "revision": "43dd0024fb929973d016",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-clock/static/js/2.7790c090.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f6eac8ee5ae25c7c316",
+    "revision": "c6087f98d76625d18f9b",
     "url": "/react-clock/static/js/main.24a86e92.chunk.js"
   },
   {
