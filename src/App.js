@@ -44,21 +44,16 @@ class App extends React.Component{
         return(
             <div className={this.state.darkTheme? styles.containerDark : styles.containerLight}>
                 <div className={styles.title}>
-                    <h1>
-                        Cloked
-                    </h1>
+                    <h1>Cloked</h1>
                 </div>
-                <div className={styles.body}>
-
+                <div className={styles.body}>    
                     <div className={styles.clock}>
                         {this.state.analogClock? <Analog Timezone={this.state.selectedTZ}/> : <DigitalClock Timezone={this.state.selectedTZ}/>}         
                     </div>
-
                     <div className={styles.timezoneSelect}>
                     <TimeZoneSelect handleTZSelect={this.handleTZSelect}/>
                     <h4>Give Continent followed by name of City</h4>
                     </div>
-
                     <div className={styles.selectionPanel}>
                         <div className={styles.modeSelection}>
                             <h3>Dark Mode</h3>
@@ -69,7 +64,6 @@ class App extends React.Component{
                                 checkedIcon={false}
                             />
                         </div>
-                        
                         <div className={styles.modeSelection}>
                             <h3>Analog Mode</h3>
                             <Switch
@@ -79,7 +73,6 @@ class App extends React.Component{
                                 checkedIcon={false}
                             />
                         </div>
-
                     </div>
                 </div>
                 <div className={styles.credits}>

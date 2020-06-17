@@ -1,4 +1,5 @@
 {
+  "homepage":"http://riteshzd.github.io/react-clock",
   "name": "my-clock",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,8 @@
     "react-switch": "^5.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "analog-clock-react": "^1.2.0"
+    "analog-clock-react": "^1.2.0",
+    "gh-pages": "^3.0.0"
   }
 }
