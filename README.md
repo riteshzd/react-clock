@@ -1,6 +1,6 @@
 # React Clock
 
-The React-Clock application is a dynamic webpage which displays the current time for all available
+The React-Clock application (I call it Cloked) is a dynamic webpage which displays the current time for all available
 timezones in either Digital format or Analog format as per the User's choice. The User can also opt
 for a Dark mode as per choice. 
 
@@ -12,4 +12,4 @@ Components folder.
 npm install
 npm start
 ```
-Check out the [Cloked](https://riteshzd.github.io/react-clock).
+Check out [Cloked](https://riteshzd.github.io/react-clock).
